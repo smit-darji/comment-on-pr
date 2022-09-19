@@ -3,8 +3,8 @@ import json
 import os
 
 from github import Github
-from validationmain import invalid_file_names
-
+# from validationmain import invalid_file_names
+from .validationmain import invalid_file_names
 
 def read_json(filepath):
     """
