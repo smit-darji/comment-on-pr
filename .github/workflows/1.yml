@@ -32,7 +32,7 @@ jobs:
         env:
           CHANGED_FILES: ${{ needs.changedFilesList.outputs.changedfiles }}
         run: |
-          python ./abcd.py
+          python ./main.py
 
   job:
     runs-on: ubuntu-latest
