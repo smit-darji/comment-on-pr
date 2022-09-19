@@ -1,8 +1,7 @@
 import json
 import os
 
-from github import Github
-from main import invalid_file_names
+from github import Github 
 
 
 def read_json(filepath):
@@ -65,7 +64,6 @@ def load_template(filename):
     with open(template_path, 'r') as f:
         return f.read()
 
-
 def main():
     # search a pull request that triggered this action
     gh = Github(os.getenv('GITHUB_TOKEN'))
@@ -75,7 +73,7 @@ def main():
     repo = gh.get_repo(event['repository']['full_name'])
     prs = repo.get_pulls(state='open', sort='created', head=branch_label)
     pr = prs[0]
-    invalid_filename = invalid_file_names
+    invalid_filename = validationmain.invalid_file_names
     # load template
     template = load_template(get_actions_input('filename'))
 
