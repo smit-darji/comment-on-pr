@@ -1,7 +1,7 @@
 import imp
 import json
 import os
-from abcd import invalid_file_names
+from abcd import *
 from github import Github
 
 # from .validationmain import invalid_file_names
