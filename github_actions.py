@@ -12,14 +12,14 @@
 #   issue.create_comment("test :",invalid_file_names)
 
 from github import Github
+from main import GITHUB_TOKEN
 
 # First create a Github instance:
 
 # using an access token
-g = Github("access_token")
+g = Github(GITHUB_TOKEN)
 
 # Github Enterprise with custom hostname
-g = Github(base_url="https://{hostname}/api/v3", login_or_token="access_token")
 
 # Then play with your Github objects:
 for repo in g.get_user().get_repos():
