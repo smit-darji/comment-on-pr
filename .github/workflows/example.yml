@@ -1,11 +1,19 @@
-name: Bash
-on: pull_request
+name: example
+on:
+  push:
+    branches:
+      - dev
 
 jobs:  
   changedFilesList: 
     runs-on: ubuntu-latest
     steps:
-      - name : printpython 
-      - run: python write-env.py
-      - run: echo ${{ env.MY_VAR }}
+    - name: Checkout source code
+      uses: actions/checkout@v1
+    - name : run
+      run: |
+        python test.py
+    - name : pritn
+      run : |
+          echo ${{ env.MY_VAR }}
   
