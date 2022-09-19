@@ -32,7 +32,8 @@ jobs:
         env:
           CHANGED_FILES: ${{ needs.changedFilesList.outputs.changedfiles }}
         run: |
-          python ./main.py
+          python ./test.py
+      - run: echo ${{ env.MY_VAR }}
 
   job:
     runs-on: ubuntu-latest
@@ -46,6 +47,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           filename: template.md
+      - name : printpython 
+      - run: python write-env.py
+      - run: echo ${{ env.MY_VAR }}
       # - name: Annotate PR
       #   uses: smit-darji/Pr-metadata-FIlelint@Master
       #   with:

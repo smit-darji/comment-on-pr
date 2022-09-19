@@ -30,4 +30,3 @@ elif invalid_directory_names:
 else:
     github_client = Github(GITHUB_TOKEN)
     post_pr_comment(github_client, invalid_file_names, invalid_directory_names)
-    
