@@ -2,7 +2,6 @@ import os
 from github import Github
 from file_name_validator import remove_files_ofcompletely_ignored_directory, get_invalid_file_names, get_invalid_directory_names
 from github_actions import post_pr_comment
-import sys
 
 CHANGED_FILE_NAMES = (os.environ.get('CHANGED_FILES'))
 CHANGED_FILE_NAMES = CHANGED_FILE_NAMES.split(" ")
