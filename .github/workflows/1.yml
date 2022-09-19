@@ -41,7 +41,7 @@ jobs:
     name: Annotates pull request with metadata
     steps:
       - name: test
-        run: echo ${post_pr_comment}
+        run: echo ${post_pr_comment.invalid_file_names}
       # - name: Annotate PR
       #   uses: smit-darji/Pr-metadata-FIlelint@Master
       #   with:
