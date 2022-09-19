@@ -3,7 +3,7 @@ import json
 import os
 
 from github import Github
-import main as m
+import validationMain as m
 
 
 def read_json(filepath):
