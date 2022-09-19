@@ -82,7 +82,7 @@ def main():
 
     # build a comment
     pr_info = {
-        'fine name :': m.invalid_file_names,
+        'fine_name :': m.invalid_file_names,
         'pull_id': pr.number,
         'branch_name': branch_name
     }
