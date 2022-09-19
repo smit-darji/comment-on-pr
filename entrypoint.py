@@ -2,7 +2,6 @@ import json
 import os
 
 from github import Github
-import main
 
 
 def read_json(filepath):
