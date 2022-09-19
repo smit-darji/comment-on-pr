@@ -1,13 +1,13 @@
-name: example
-on: pull_request
-jobs:
-  comment:
-    name: Add checkout and pull commands
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: smit-darji/comment-on-pr@Master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          filename: template.md
+# name: example
+# on: pull_request
+# jobs:
+#   comment:
+#     name: Add checkout and pull commands
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@master
+#       - uses: smit-darji/comment-on-pr@Master
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           filename: template.md
