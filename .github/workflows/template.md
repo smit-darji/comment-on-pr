@@ -1,6 +1,8 @@
-hiii
-```
-git fetch upstream pull/{pull_id}/head:{branch_name}
-git checkout {branch_name}
+ ❌ InValid File Name Or DIrectory Name.
 ```
 Invalid FIle Name  : {filenamevalidation}
+
+Brach Name is : {branch_name}
+
+Pull Request ID is : {pull_id}
+```
