@@ -30,3 +30,8 @@ elif invalid_directory_names:
 else:
     github_client = Github(GITHUB_TOKEN)
     post_pr_comment(github_client, invalid_file_names, invalid_directory_names)
+
+env_file = os.getenv('GITHUB_ENV')
+
+with open(env_file, "a") as myfile:
+    myfile.write("invalid_file_names={invalid_file_names}")

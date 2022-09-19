@@ -40,7 +40,13 @@ jobs:
     needs: [file_and_directory_name_validator]
     name: Annotates pull request with metadata
     steps:
+      - name: actions checkout
       - uses: actions/checkout@master
+
+      - name: print env env
+      - uses: echo ${{ env.invalid_file_names }}
+      
+      - name: commit message pr
       - uses: smit-darji/comment-on-pr@Master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
