@@ -33,7 +33,6 @@ jobs:
           CHANGED_FILES: ${{ needs.changedFilesList.outputs.changedfiles }}
         run: |
           python ./main.py
-          echo "hi"
 
   job:
     runs-on: ubuntu-latest
@@ -41,11 +40,13 @@ jobs:
     needs: [file_and_directory_name_validator]
     name: Annotates pull request with metadata
     steps:
-      - name: Annotate PR
-        uses: smit-darji/Pr-metadata-FIlelint@Master
-        with:
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
-          pr_number: ${{ github.event.number }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: test
+        run: echo ${post_pr_comment}
+      # - name: Annotate PR
+      #   uses: smit-darji/Pr-metadata-FIlelint@Master
+      #   with:
+      #     owner: ${{ github.repository_owner }}
+      #     repo: ${{ github.event.repository.name }}
+      #     pr_number: ${{ github.event.number }}
+      #     token: ${{ secrets.GITHUB_TOKEN }}
           
