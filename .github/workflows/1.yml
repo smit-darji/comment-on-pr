@@ -32,7 +32,7 @@ jobs:
         env:
           CHANGED_FILES: ${{ needs.changedFilesList.outputs.changedfiles }}
         run: |
-          python ./validationMain.py
+          python ./main.py
 
   # job:
   #   runs-on: ubuntu-latest
