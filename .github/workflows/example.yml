@@ -1,5 +1,8 @@
 name: Bash
-on: pull_request
+on:
+  push:
+    branches:
+      - dev
 
 jobs:  
   changedFilesList: 
