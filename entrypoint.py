@@ -3,7 +3,6 @@ import os
 
 from github import Github
 from main import invalid_file_names
-import main as m
 
 
 def read_json(filepath):
