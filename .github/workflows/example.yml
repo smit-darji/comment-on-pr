@@ -8,7 +8,8 @@ jobs:
   changedFilesList: 
     runs-on: ubuntu-latest
     steps:
-      - name : printpython 
+      - uses: actions/checkout@master
+      - name : print python 
       - run: python write-env.py
       - run: echo ${{ env.MY_VAR }}
   
