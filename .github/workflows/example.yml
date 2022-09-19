@@ -1,16 +1,13 @@
-# name: example
-# on: pull_request
-
-# jobs:  
-#   changedFilesList: 
-#     runs-on: ubuntu-latest
-#     steps:
-#     - name: Checkout source code
-#       uses: actions/checkout@v1
-#     - name : run
-#       run: |
-#         python test.py
-#     - name : pritn
-#       run : |
-#           echo ${{ env.MY_VAR }}
-  
+name: example
+on: pull_request
+jobs:
+  comment:
+    name: Add checkout and pull commands
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: harupy/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: template.md
