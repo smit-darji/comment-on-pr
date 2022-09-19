@@ -1,19 +1,16 @@
-name: example
-on:
-  push:
-    branches:
-      - dev
+# name: example
+# on: pull_request
 
-jobs:  
-  changedFilesList: 
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout source code
-      uses: actions/checkout@v1
-    - name : run
-      run: |
-        python test.py
-    - name : pritn
-      run : |
-          echo ${{ env.MY_VAR }}
+# jobs:  
+#   changedFilesList: 
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout source code
+#       uses: actions/checkout@v1
+#     - name : run
+#       run: |
+#         python test.py
+#     - name : pritn
+#       run : |
+#           echo ${{ env.MY_VAR }}
   
