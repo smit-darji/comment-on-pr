@@ -34,18 +34,18 @@ jobs:
         run: |
           python ./main.py
 
-  # job:
-  #   runs-on: ubuntu-latest
-  #   if: ${{ always() && contains(join(needs.*.result, ','), 'failure') }}
-  #   needs: [file_and_directory_name_validator]
-  #   name: Annotates pull request with metadata
-  #   steps:
-  #     - uses: actions/checkout@master
-  #     - uses: smit-darji/comment-on-pr@Master
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       with:
-  #         filename: template.md
+  job:
+    runs-on: ubuntu-latest
+    if: ${{ always() && contains(join(needs.*.result, ','), 'failure') }}
+    needs: [file_and_directory_name_validator]
+    name: Annotates pull request with metadata
+    steps:
+      - uses: actions/checkout@master
+      - uses: smit-darji/comment-on-pr@Master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: template.md
       # - name: Annotate PR
       #   uses: smit-darji/Pr-metadata-FIlelint@Master
       #   with:
