@@ -5,6 +5,7 @@ import validationmain as m
 from github import Github
 
 
+
 def read_json(filepath):
     """
     Read a json file as a dictionary.
