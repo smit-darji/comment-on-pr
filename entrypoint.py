@@ -1,10 +1,10 @@
 import imp
 import json
 import os
-
+from abcd import invalid_file_names
 from github import Github
-# from validationmain import invalid_file_names
-from .validationmain import invalid_file_names
+
+# from .validationmain import invalid_file_names
 
 def read_json(filepath):
     """
