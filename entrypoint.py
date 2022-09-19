@@ -3,7 +3,8 @@ import json
 import os
 
 from github import Github
-import validationMain as m
+import validationMain as v
+# import validationMain as m
 
 
 def read_json(filepath):
@@ -82,7 +83,7 @@ def main():
 
     # build a comment
     pr_info = {
-        'invalid_file_names :': m.invalid_file_names,
+        'invalid_file_names :': v.invalid_file_names,
         'pull_id': pr.number,
         'branch_name': branch_name
     }
