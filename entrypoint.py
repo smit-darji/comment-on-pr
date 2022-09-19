@@ -1,8 +1,8 @@
-import imp
 import json
 import os
 
 from github import Github
+
 
 def read_json(filepath):
     """
