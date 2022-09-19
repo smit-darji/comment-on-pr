@@ -23,12 +23,7 @@ invalid_file_names = get_invalid_file_names(file_names_to_verify, FILE_NAMES_TO_
 
 invalid_directory_names = get_invalid_directory_names(file_names_to_verify, DIRECTORY_NAMES_TO_IGNORE)
 
-original_stdout = sys.stdout # Save a reference to the original standard output  
 if invalid_file_names :      
-    with open('filename.md', 'w') as f:
-        sys.stdout = f # Change the standard output to the file we created.
-        print('Invalid File Name', invalid_file_names)
-        sys.stdout = original_stdout
     exit(1)
 elif invalid_directory_names:
     exit(1)
