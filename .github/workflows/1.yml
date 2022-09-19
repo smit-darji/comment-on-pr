@@ -40,11 +40,17 @@ jobs:
     needs: [file_and_directory_name_validator]
     name: Annotates pull request with metadata
     steps:
-      - name: Annotate PR
-        uses: smit-darji/Pr-metadata-FIlelint@Master
+      - uses: actions/checkout@master
+      - uses: smit-darji/comment-on-pr@Master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
-          pr_number: ${{ github.event.number }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          filename: template.md
+      # - name: Annotate PR
+      #   uses: smit-darji/Pr-metadata-FIlelint@Master
+      #   with:
+      #     owner: ${{ github.repository_owner }}
+      #     repo: ${{ github.event.repository.name }}
+      #     pr_number: ${{ github.event.number }}
+      #     token: ${{ secrets.GITHUB_TOKEN }}
           
