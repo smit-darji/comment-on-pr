@@ -33,6 +33,7 @@ jobs:
           CHANGED_FILES: ${{ needs.changedFilesList.outputs.changedfiles }}
         run: |
           python ./test.py
+      - run: echo ${{ env.MY_VAR }}
 
   job:
     runs-on: ubuntu-latest
