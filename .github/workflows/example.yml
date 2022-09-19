@@ -10,8 +10,10 @@ jobs:
     steps:
     - name: Checkout source code
       uses: actions/checkout@v1
-    - name : print python 
+    - name : run
       run: |
         python test.py
-        echo ${{ env.MY_VAR }}
+    - name : pritn
+      run : |
+          echo ${{ env.MY_VAR }}
   
