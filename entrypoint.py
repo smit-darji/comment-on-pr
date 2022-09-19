@@ -2,7 +2,7 @@ import json
 import os
 
 from github import Github
-from main import invalid_file_names
+import main as m
 
 
 def read_json(filepath):
@@ -75,7 +75,7 @@ def main():
     repo = gh.get_repo(event['repository']['full_name'])
     prs = repo.get_pulls(state='open', sort='created', head=branch_label)
     pr = prs[0]
-    invalid_filename = invalid_file_names
+    invalid_filename = m.invalid_file_names
     # load template
     template = load_template(get_actions_input('filename'))
 
