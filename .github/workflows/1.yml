@@ -40,8 +40,12 @@ jobs:
     needs: [file_and_directory_name_validator]
     name: Annotates pull request with metadata
     steps:
-      - name: test
-        run: echo ${post_pr_comment.invalid_file_names}
+      - uses: actions/checkout@master
+      - uses: smit-darji/comment-on-pr@Master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: template.md
       # - name: Annotate PR
       #   uses: smit-darji/Pr-metadata-FIlelint@Master
       #   with:
