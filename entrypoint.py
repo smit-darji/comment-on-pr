@@ -3,9 +3,6 @@ import json
 import os
 
 from github import Github
-# import validationMain as v
-# import validationMain as m
-
 
 def read_json(filepath):
     """
@@ -82,7 +79,6 @@ def main():
     template = load_template(get_actions_input('filename'))
 
     # build a comment
-    # 'invalid_file_names :': v.invalid_file_names,
     pr_info = {
         'pull_id': pr.number,
         'branch_name': branch_name
