@@ -1,26 +1,26 @@
-# from github import Github
-# from main import GITHUB_TOKEN
-
-# def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
-#   print(invalid_file_names)
-#   print(invalid_directory_names)
-#   # g = Github("access_token")
-#   gh = Github(GITHUB_TOKEN)
-#   repo = gh.repository("smit-darji", "comment-on-pr")
-#   pr = repo.create_pull("description", base, from_branch, detailed)
-#   issue = repo.issue(pr.number)
-#   issue.create_comment("test :",invalid_file_names)
-
 from github import Github
 from main import GITHUB_TOKEN
 
-# First create a Github instance:
+def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
+  print(invalid_file_names)
+  print(invalid_directory_names)
+  # g = Github("access_token")
+  gh = Github(GITHUB_TOKEN)
+  repo = gh.repository("smit-darji", "comment-on-pr")
+  pr = repo.create_pull("description", base, from_branch, detailed)
+  issue = repo.issue(pr.number)
+  issue.create_comment("test :",invalid_file_names)
 
-# using an access token
-g = Github(GITHUB_TOKEN)
+# from github import Github
+# from main import GITHUB_TOKEN
 
-# Github Enterprise with custom hostname
+# # First create a Github instance:
 
-# Then play with your Github objects:
-for repo in g.get_user().get_repos():
-    print(repo.name)
+# # using an access token
+# g = Github(GITHUB_TOKEN)
+
+# # Github Enterprise with custom hostname
+
+# # Then play with your Github objects:
+# for repo in g.get_user().get_repos():
+#     print(repo.name)
