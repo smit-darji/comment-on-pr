@@ -1,4 +1,4 @@
-name: Bash
+name: example
 on:
   push:
     branches:
