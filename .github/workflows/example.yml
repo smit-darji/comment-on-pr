@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name : print python 
-      - run: python write-env.py
+      - run: python test.py
       - run: echo ${{ env.MY_VAR }}
   
