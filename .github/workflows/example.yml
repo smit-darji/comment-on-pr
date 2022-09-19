@@ -8,8 +8,10 @@ jobs:
   changedFilesList: 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name : print python 
-      - run: python test.py
-      - run: echo ${{ env.MY_VAR }}
+    - name: Checkout source code
+      uses: actions/checkout@v1
+    - name : print python 
+      run: |
+        python test.py
+        echo ${{ env.MY_VAR }}
   
