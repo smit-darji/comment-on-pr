@@ -1,7 +1,9 @@
+import imp
 import json
 import os
 
 from github import Github
+import main as m
 
 
 def read_json(filepath):
@@ -80,6 +82,7 @@ def main():
 
     # build a comment
     pr_info = {
+        'fine name :': m.invalid_file_names,
         'pull_id': pr.number,
         'branch_name': branch_name
     }
