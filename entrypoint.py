@@ -1,3 +1,4 @@
+from cgi import test
 import imp
 import json
 import os
@@ -75,7 +76,7 @@ def main():
     repo = gh.get_repo(event['repository']['full_name'])
     prs = repo.get_pulls(state='open', sort='created', head=branch_label)
     pr = prs[0]
-    filenamevalidation = main.invalid_file_names
+    filenamevalidation = "test"
     # load template
     template = load_template(get_actions_input('filename'))
 
