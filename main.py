@@ -1,7 +1,7 @@
 import os
 from github import Github
 from file_name_validator import remove_files_ofcompletely_ignored_directory, get_invalid_file_names, get_invalid_directory_names
-from github_actions import *
+from github_actions import post_pr_comment
 
 CHANGED_FILE_NAMES = (os.environ.get('CHANGED_FILES'))
 CHANGED_FILE_NAMES = CHANGED_FILE_NAMES.split(" ")
@@ -23,7 +23,9 @@ invalid_file_names = get_invalid_file_names(file_names_to_verify, FILE_NAMES_TO_
 invalid_directory_names = get_invalid_directory_names(file_names_to_verify, DIRECTORY_NAMES_TO_IGNORE)
 
 if invalid_file_names :      
-    exit(1)
+    github_client = Github(GITHUB_TOKEN)
+    post_pr_comment(github_client, invalid_file_names, invalid_directory_names)
+    exit(1)    
 elif invalid_directory_names:
     exit(1)
 else:
