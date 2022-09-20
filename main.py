@@ -24,7 +24,8 @@ invalid_directory_names = get_invalid_directory_names(file_names_to_verify, DIRE
 
 
 if not invalid_file_names and not invalid_directory_names:
-    exit(1)
+    exit(0)
 else:
     github_client = Github(GITHUB_TOKEN)
     post_pr_comment(github_client, invalid_file_names, invalid_directory_names)
+    exit(1)

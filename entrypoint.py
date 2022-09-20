@@ -4,7 +4,7 @@ import os
 from github import Github
 # from github_actions import post_pr_comment
 # from .validationmain import invalid_file_names
-
+import main
 def read_json(filepath):
     """
     Read a json file as a dictionary.
@@ -75,7 +75,7 @@ def main():
     repo = gh.get_repo(event['repository']['full_name'])
     prs = repo.get_pulls(state='open', sort='created', head=branch_label)
     pr = prs[0]
-    filenamevalidation = invalid_file_names
+    filenamevalidation = main.invalid_file_names
     # load template
     template = load_template(get_actions_input('filename'))
 
