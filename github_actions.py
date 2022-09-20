@@ -74,7 +74,7 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     print("action file ",invalid_file_names)
     print("Action dir",invalid_directory_names)
     print(type(invalid_file_names))
-    invalid_file_names_Stirng = ",".join( invalid_file_names )
+    invalid_file_names_Stirng = ", ".join( invalid_file_names )
     print(invalid_file_names_Stirng)
     print (type(invalid_file_names_Stirng))
         # search a pull request that triggered this action
@@ -86,12 +86,14 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     prs = repo.get_pulls(state='open', sort='created', head=branch_label)
     pr = prs[0]
     filenamevalidation = invalid_file_names_Stirng
+    dirname = invalid_directory_names
     # load template
     template = load_template(get_actions_input('filename'))
 
     # build a comment
     pr_info = {
         'filenamevalidation':filenamevalidation,
+        'dirname':dirname,
         'pull_id': pr.number,
         'branch_name': branch_name
     }
