@@ -72,7 +72,7 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     print("action file ",invalid_file_names)
     print("Action dir",invalid_directory_names)
     print(type(invalid_file_names))
-    invalid_file_names_Stirng = " ".join( invalid_file_names )
+    invalid_file_names_Stirng = ",".join( invalid_file_names )
     print(invalid_file_names_Stirng)
     print (type(invalid_file_names_Stirng))
         # search a pull request that triggered this action
