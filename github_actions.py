@@ -1,9 +1,13 @@
 # from github import Github
 
+from typing_extensions import Self
 
+
+demo = []
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
   print("action file ",invalid_file_names)
   print("Action dir",invalid_directory_names)
+  Self.demo = invalid_file_names
   # g = Github("access_token")
   # gh = Github(GITHUB_TOKEN)
   # for repo in gh.get_user().get_repos():
