@@ -32,9 +32,11 @@ jobs:
         env:
           CHANGED_FILES: ${{ needs.changedFilesList.outputs.changedfiles }}
           GITHUB_TOKEN: ${{ secrets.HUB_TOKEN }}
+      - name: Checkout Branch
       - uses: smit-darji/comment-on-pr@Master
         with:
           filename: template.md
+      - name: Run Python
         run: |
           python ./main.py
 
