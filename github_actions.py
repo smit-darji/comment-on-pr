@@ -62,6 +62,8 @@ def load_template(filename):
     template : str
 
     """
+    print("File name ", filename)
+    print(type(filename))
     template_path = os.path.join('.github/workflows', filename)
     with open(template_path, 'r') as f:
         return f.read()
