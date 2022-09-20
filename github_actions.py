@@ -4,7 +4,7 @@ import os
 
 from github import Github
 # from main import invalid_file_names
-filename = "template.md"
+
 
 def read_json(filepath):
     """
@@ -62,7 +62,7 @@ def load_template(filename):
     template : str
 
     """
-
+    filename = "template.md"
     print("file is:",filename)
     print(type(filename))
     template_path = os.path.join('.github/workflows', filename)
