@@ -72,8 +72,8 @@ def load_template(filename):
 
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
 
-    invalid_file_names_Stirng = ", ".join( invalid_file_names )
-    invalid_directory_names_Stirng = ", ".join( invalid_directory_names )
+    # invalid_file_names_Stirng = ", ".join( invalid_file_names )
+    # invalid_directory_names_Stirng = ", ".join( invalid_directory_names )
         # search a pull request that triggered this action
     gh = Github(os.getenv('GITHUB_TOKEN'))
     event = read_json(os.getenv('GITHUB_EVENT_PATH'))
@@ -82,8 +82,14 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     repo = gh.get_repo(event['repository']['full_name'])
     prs = repo.get_pulls(state='open', sort='created', head=branch_label)
     pr = prs[0]
-    filenamevalidation = invalid_file_names_Stirng
-    dirname = invalid_directory_names_Stirng
+    for i in invalid_file_names:
+        print(i)
+        filenamevalidation = i
+    for j in invalid_file_names:
+        print(j)
+        dirname = j
+    
+
     # load template
     template = load_template(get_actions_input('filename'))
 
