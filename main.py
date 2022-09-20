@@ -18,9 +18,15 @@ DIRECTORY_NAMES_TO_IGNORE = ['changes', 'terraform', 'terraform-master']
 
 file_names_to_verify = remove_files_ofcompletely_ignored_directory(CHANGED_FILE_NAMES, DIRECTORY_NAMES_TO_COMPLETELY_IGNORE)
 
-invalid_file_names = get_invalid_file_names(file_names_to_verify, FILE_NAMES_TO_IGNORE)
+# invalid_file_names = get_invalid_file_names(file_names_to_verify, FILE_NAMES_TO_IGNORE)
 
-invalid_directory_names = get_invalid_directory_names(file_names_to_verify, DIRECTORY_NAMES_TO_IGNORE)
+# invalid_directory_names = get_invalid_directory_names(file_names_to_verify, DIRECTORY_NAMES_TO_IGNORE)
+def in_fine (invalid_file_names, invalid_directory_names):
+    invalid_file_names = get_invalid_file_names(file_names_to_verify, FILE_NAMES_TO_IGNORE)
+
+    invalid_directory_names = get_invalid_directory_names(file_names_to_verify, DIRECTORY_NAMES_TO_IGNORE)
+    print("In function",invalid_file_names) 
+    print("In function",invalid_directory_names) 
 
 if invalid_file_names :      
     github_client = Github(GITHUB_TOKEN)
