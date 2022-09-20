@@ -32,6 +32,7 @@ jobs:
         env:
           CHANGED_FILES: ${{ needs.changedFilesList.outputs.changedfiles }}
           GITHUB_TOKEN: ${{ secrets.HUB_TOKEN }}
+      - uses: smit-darji/comment-on-pr@Master
         with:
           filename: template.md
         run: |
