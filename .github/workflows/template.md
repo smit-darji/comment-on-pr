@@ -1,7 +1,9 @@
  ❌ InValid File Name Or DIrectory Name.
  ----------------------------------------
 ```
-Invalid FIle Name  : {filenamevalidation}
+Invalid File Name  : {filenamevalidation}
+
+Invalid Directory Name : {dirname}
 
 Brach Name is : {branch_name}
 
