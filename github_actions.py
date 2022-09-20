@@ -103,7 +103,7 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     # check if this pull request has a duplicated comment
     old_comments = [c.body for c in pr.get_issue_comments()]
     if new_comment in old_comments:
-        pr.create_issue_comment('This pull request already a duplicated comment.')
+        pr.create_issue_comment('This pull request already a duplicated comment.\n',' Pull Request me : {pr.number}')
         exit(0)
 
     # add the comment
