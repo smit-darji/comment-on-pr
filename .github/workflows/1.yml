@@ -36,9 +36,9 @@ jobs:
       - uses: smit-darji/comment-on-pr@Master
         with:
           filename: template.md
-      - name: Run Python
-        run: |
-          python ./main.py
+      # - name: Run Python
+      #   run: |
+      #     python ./main.py
 
 
       # - name: Annotate PR
