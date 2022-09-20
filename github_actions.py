@@ -92,6 +92,8 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     template = load_template(get_actions_input('filename'))
     for file_names in invalid_file_names:
       for dir_names in invalid_directory_names:
+        print(file_names)
+        print(dir_names)
         pr_info = {
           'filenamevalidation':file_names,
           'dirname': dir_names
