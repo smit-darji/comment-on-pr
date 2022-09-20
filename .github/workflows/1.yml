@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: smit-darji/comment-on-pr@Master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.HUB_TOKEN }}
         with:
           filename: template.md
       # - name: Annotate PR
