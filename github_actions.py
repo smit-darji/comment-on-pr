@@ -90,14 +90,13 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     dirname = invalid_directory_names_Stirng
     # load template
     template = load_template(get_actions_input('filename'))
-    for file_names in invalid_file_names:
-      for dir_names in invalid_directory_names:
-        print(file_names)
-        print(dir_names)
-        pr_info = {
-          'filenamevalidation':file_names,
-          'dirname': dir_names
-        }
+    # for file_names in invalid_file_names:
+    #   for dir_names in invalid_directory_names:
+    #     print(file_names)
+    pr_info = {
+      'filenamevalidation':filenamevalidation,
+      'dirname': dirname
+    }
     print(type(pr_info))
     new_comment = template.format(**pr_info)
 
