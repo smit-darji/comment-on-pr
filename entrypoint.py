@@ -2,6 +2,7 @@ import imp
 import json
 import os
 from github import Github
+from main import invalid_file_names
 
 # from .validationmain import invalid_file_names
 
@@ -75,7 +76,7 @@ def main():
     repo = gh.get_repo(event['repository']['full_name'])
     prs = repo.get_pulls(state='open', sort='created', head=branch_label)
     pr = prs[0]
-    filenamevalidation = "abc.py"
+    filenamevalidation = invalid_file_names
     # load template
     template = load_template(get_actions_input('filename'))
 
