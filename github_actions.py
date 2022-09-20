@@ -4,7 +4,6 @@ import json
 import os
 from github import Github
 
-
 def read_json(filepath):
     """
     Read a json file as a dictionary.
@@ -69,6 +68,7 @@ test='smit'
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
     print("action file ",invalid_file_names)
     print("Action dir",invalid_directory_names)
+    print(type(invalid_file_names))
     gh = Github(os.getenv('GITHUB_TOKEN'))
     event = read_json(os.getenv('GITHUB_EVENT_PATH'))
     branch_label = event['pull_request']['head']['label']  # author:branch
@@ -79,6 +79,7 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     filenamevalidation = test
     # load template
     template = load_template(get_actions_input('filename'))
+
     # build a comment
     pr_info = {
         'filenamevalidation':filenamevalidation,
@@ -86,11 +87,15 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
         'branch_name': branch_name
     }
     new_comment = template.format(**pr_info)
+
     # check if this pull request has a duplicated comment
     old_comments = [c.body for c in pr.get_issue_comments()]
     if new_comment in old_comments:
         print('This pull request already a duplicated comment.')
         exit(0)
+
+    # add the comment
+    pr.create_issue_comment('new_comment')
 
 
 
