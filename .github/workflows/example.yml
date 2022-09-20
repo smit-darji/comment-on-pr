@@ -5,7 +5,7 @@ jobs:
     name: Add checkout and pull commands
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@dev
+      - uses: actions/checkout@Master
       - uses: smit-darji/comment-on-pr@dev
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
