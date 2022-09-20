@@ -4,7 +4,7 @@ import os
 from github import Github
 # from github_actions import post_pr_comment
 # from .validationmain import invalid_file_names
-import main
+
 def read_json(filepath):
     """
     Read a json file as a dictionary.
