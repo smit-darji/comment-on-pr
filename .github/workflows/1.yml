@@ -31,6 +31,7 @@ jobs:
       - name: Run Validation
         env:
           CHANGED_FILES: ${{ needs.changedFilesList.outputs.changedfiles }}
+          GITHUB_TOKEN: ${{ secrets.HUB_TOKEN }}
         run: |
           python ./main.py
 
