@@ -71,7 +71,7 @@ def load_template(filename):
 
 def main():
     # search a pull request that triggered this action
-    gh = Github(os.getenv('GITHUB_TOKEN'))
+    gh = Github(os.getenv('HUB_TOKEN'))
     event = read_json(os.getenv('GITHUB_EVENT_PATH'))
     branch_label = event['pull_request']['head']['label']  # author:branch
     branch_name = branch_label.split(':')[-1]
