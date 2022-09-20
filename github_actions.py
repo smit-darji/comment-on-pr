@@ -71,7 +71,8 @@ def load_template(filename):
 
 
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
-
+    print("invalid_file_names" ,invalid_file_names)
+    print("invalid_directory_names" ,invalid_directory_names)
     # invalid_file_names_Stirng = ", ".join( invalid_file_names )
     # invalid_directory_names_Stirng = ", ".join( invalid_directory_names )
         # search a pull request that triggered this action
@@ -82,24 +83,18 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     repo = gh.get_repo(event['repository']['full_name'])
     prs = repo.get_pulls(state='open', sort='created', head=branch_label)
     pr = prs[0]
-    for i in invalid_file_names:
-        print(i)
-        filenamevalidation = i
-    for j in invalid_file_names:
-        print(j)
-        dirname = j
-    
-
+ 
+    # filenamevalidation = invalid_file_names_Stirng
+    # dirname = invalid_directory_names_Stirng
     # load template
     template = load_template(get_actions_input('filename'))
-
+    for i in invalid_file_names:
     # build a comment
-    pr_info = {
-        'filenamevalidation':filenamevalidation,
-        'dirname':dirname,
-        'pull_id': pr.number,
-        'branch_name': branch_name
-    }
+      for j in invalid_directory_names:
+        pr_info = {
+            'filenamevalidation':i,
+            'dirname': j
+        }
     new_comment = template.format(**pr_info)
 
     # check if this pull request has a duplicated comment
