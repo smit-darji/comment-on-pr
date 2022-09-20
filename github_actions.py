@@ -1,5 +1,6 @@
 import imp
 import json
+from lib2to3.pytree import type_repr
 import os
 
 from github import Github
@@ -73,8 +74,8 @@ def load_template(filename):
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
     print("invalid_file_names" ,invalid_file_names)
     print("invalid_directory_names" ,invalid_directory_names)
-    # invalid_file_names_Stirng = ", ".join( invalid_file_names )
-    # invalid_directory_names_Stirng = ", ".join( invalid_directory_names )
+    invalid_file_names_Stirng = ", ".join( invalid_file_names )
+    invalid_directory_names_Stirng = ", ".join( invalid_directory_names )
         # search a pull request that triggered this action
     gh = Github(os.getenv('GITHUB_TOKEN'))
     event = read_json(os.getenv('GITHUB_EVENT_PATH'))
@@ -84,17 +85,17 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     prs = repo.get_pulls(state='open', sort='created', head=branch_label)
     pr = prs[0]
  
-    # filenamevalidation = invalid_file_names_Stirng
-    # dirname = invalid_directory_names_Stirng
+    filenamevalidation = invalid_file_names_Stirng
+    dirname = invalid_directory_names_Stirng
     # load template
     template = load_template(get_actions_input('filename'))
     for i in invalid_file_names:
-    # build a comment
       for j in invalid_directory_names:
         pr_info = {
-            'filenamevalidation':i,
-            'dirname': j
+          'filenamevalidation':filenamevalidation,
+          'dirname': dirname
         }
+    print(type(pr_info))
     new_comment = template.format(**pr_info)
 
     # check if this pull request has a duplicated comment
