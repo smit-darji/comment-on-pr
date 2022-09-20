@@ -5,5 +5,8 @@ RUN pip install PyGithub
 
 # ENTRYPOINT python /entrypoint.py
 COPY main.py /main.py
+COPY file_name_validator.py /file_name_validator.py
+COPY entrypoint.py /entrypoint.py
+COPY github_actions.py /github_actions.py
 
 ENTRYPOINT python /main.py
