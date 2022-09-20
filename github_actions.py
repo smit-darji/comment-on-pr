@@ -1,9 +1,11 @@
-# from github import Github
+from cgi import test
 import imp
 import json
 import os
 from github import Github
-
+# from github_actions import post_pr_comment
+# from .validationmain import invalid_file_names
+# import main
 def read_json(filepath):
     """
     Read a json file as a dictionary.
@@ -60,11 +62,10 @@ def load_template(filename):
     template : str
 
     """
-    print("file name is :",filename)
-    print(type(filename))
     template_path = os.path.join('.github/workflows', filename)
     with open(template_path, 'r') as f:
         return f.read()
+
 
 test='smit'
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
