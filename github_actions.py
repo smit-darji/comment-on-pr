@@ -69,7 +69,6 @@ demo = []
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
   print("action file ",invalid_file_names)
   print("Action dir",invalid_directory_names)
-  Self.demo = invalid_file_names
   gh = Github(os.getenv('GITHUB_TOKEN'))
   event = read_json(os.getenv('GITHUB_EVENT_PATH'))
   branch_label = event['pull_request']['head']['label']  # author:branch
