@@ -49,3 +49,4 @@ def get_invalid_directory_names(file_names_to_verify, directory_names_to_ignore)
             logging.error("%s is not a valid directory name:", dir_name)
             invalid_directory_names.append(dir_name)
     return invalid_directory_names
+
