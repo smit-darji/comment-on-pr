@@ -1,14 +1,8 @@
-from cgi import test
-import imp
-import json
-import os
-from entrypoint import read_json
-from github import Github
 # from github_actions import post_pr_comment
 # from .validationmain import invalid_file_names
 # import main
 
-test='smit'
+
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
     print("action file ",invalid_file_names)
     print("Action dir",invalid_directory_names)
