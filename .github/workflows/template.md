@@ -1,4 +1,4 @@
- ❌ InValid File Name Or DIrectory Name.
+ ❌ Invalid File Name Or Directories Name.
  ----------------------------------------
 ```
 Invalid File Name  : {filenamevalidation}
