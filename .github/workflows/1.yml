@@ -26,18 +26,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: Installation 
         run: pip install PyGithub
       - name: Run Validation
         env:
           CHANGED_FILES: ${{ needs.changedFilesList.outputs.changedfiles }}
           GITHUB_TOKEN: ${{ secrets.HUB_TOKEN }}
-      - name: Run Python
         run: |
           python ./main.py
 
-
+  # job:
+  #   runs-on: ubuntu-latest
+  #   if: ${{ always() && contains(join(needs.*.result, ','), 'failure') }}
+  #   needs: [file_and_directory_name_validator]
+  #   name: Annotates pull request with metadata
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - uses: smit-darji/comment-on-pr@Master
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.HUB_TOKEN }}
+  #       with:
+  #         filename: template.md
       # - name: Annotate PR
       #   uses: smit-darji/Pr-metadata-FIlelint@Master
       #   with:
