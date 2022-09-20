@@ -1,12 +1,12 @@
 name: example
-on: push
+on: pull_request
 jobs:
   comment:
     name: Add checkout and pull commands
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@Master
-      - uses: smit-darji/comment-on-pr@dev
+      - uses: smit-darji/comment-on-pr@Master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
