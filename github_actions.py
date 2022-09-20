@@ -1,5 +1,6 @@
 import imp
 import json
+from lib2to3.pytree import type_repr
 import os
 
 from github import Github
@@ -88,13 +89,13 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     dirname = invalid_directory_names_Stirng
     # load template
     template = load_template(get_actions_input('filename'))
-    # for i in invalid_file_names:
-    #     # build a comment
-    #   for j in invalid_directory_names:
-    pr_info = {
-        'filenamevalidation':filenamevalidation,
-        'dirname': dirname
-    }
+    for i in invalid_file_names:
+      for j in invalid_directory_names:
+        pr_info = {
+          'filenamevalidation':filenamevalidation,
+          'dirname': dirname
+        }
+    print(type(pr_info))
     new_comment = template.format(**pr_info)
 
     # check if this pull request has a duplicated comment
