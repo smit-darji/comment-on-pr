@@ -2,7 +2,6 @@ import imp
 import json
 import os
 from github import Github
-from main import invalid_file_names
 
 # from .validationmain import invalid_file_names
 
