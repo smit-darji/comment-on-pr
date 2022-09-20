@@ -79,7 +79,7 @@ def post_pr_comment (github_client, invalid_file_names, invalid_directory_names)
     print(invalid_file_names_Stirng)
     print (type(invalid_file_names_Stirng))
         # search a pull request that triggered this action
-    gh = Github(os.getenv('GITHUB_TOKEN'))
+    gh = Github(os.getenv(github_client))
     event = read_json(os.getenv('GITHUB_EVENT_PATH'))
     branch_label = event['pull_request']['head']['label']  # author:branch
     branch_name = branch_label.split(':')[-1]
