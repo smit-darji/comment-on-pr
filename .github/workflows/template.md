@@ -6,5 +6,5 @@
 {filenamevalidation}
 
 <b>Invalid Directory Name :</b>
-dirname}
+{dirname}
 
