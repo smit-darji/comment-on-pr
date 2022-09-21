@@ -8,9 +8,3 @@
 <b>Invalid Directory Name :</b>
 dirname}
 
-<!-- ```
-Invalid File Name : {filenamevalidation}
-
-Invalid Directory Name :{dirname}
-
-``` -->
