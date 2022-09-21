@@ -1,8 +1,8 @@
  ❌ Invalid File Name Or Directories Name.
  ----------------------------------------
 ```
- {filenamevalidation}
+Invalid File Name : {filenamevalidation}
 
- {dirname}
+Invalid Directory Name : {dirname}
 
 ```
