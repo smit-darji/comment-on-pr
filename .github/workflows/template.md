@@ -1,8 +1,9 @@
- ❌ Invalid File Name Or Directories Name.
- ----------------------------------------
-```
-Invalid File Name : {filenamevalidation}
+ <h1><b>❌ Invalid File Name Or Directories Name.</b></h1>
 
-Invalid Directory Name : {dirname}
 
-```
+<b>Invalid File Name : </b>
+- {filenamevalidation}
+
+<b>Invalid Directory Name :</b>
+- {dirname}
+
