@@ -75,7 +75,7 @@ i = 0
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
     print("invalid_file_names" ,invalid_file_names)
     print("invalid_directory_names" ,invalid_directory_names)
-    invalid_file_names_Stirng = "\n -\t".join( invalid_file_names )
+    invalid_file_names_Stirng = "-\t \n ".join( invalid_file_names )
     invalid_directory_names_Stirng = "\n -\t".join( invalid_directory_names )
         # search a pull request that triggered this action
     gh = Github(os.getenv('GITHUB_TOKEN'))
