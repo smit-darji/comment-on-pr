@@ -2,9 +2,11 @@
 
 <hr>
 
-<b>Invalid File Name : </b>{filenamevalidation}
+<b>Invalid File Name : </b>
+-{filenamevalidation}
 
-<b>Invalid Directory Name :</b>{dirname}
+<b>Invalid Directory Name :</b>
+- {dirname}
 
 ```
 Invalid File Name : {filenamevalidation}
