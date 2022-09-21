@@ -4,8 +4,8 @@
 </b>Invalid Directory Name :</b>{dirname}
 
 ```
-<b>Invalid File Name : </b>{filenamevalidation}
+Invalid File Name : {filenamevalidation}
 
-</b>Invalid Directory Name :</b>{dirname}
+Invalid Directory Name :{dirname}
 
 ```
