@@ -75,7 +75,7 @@ i = 0
 def post_pr_comment (github_client, invalid_file_names, invalid_directory_names):
     print("invalid_file_names" ,invalid_file_names)
     print("invalid_directory_names" ,invalid_directory_names)
-    invalid_file_names_Stirng = "Invalid File Name : \n".join( invalid_file_names )
+    invalid_file_names_Stirng = "Invalid File Name : ".join( invalid_file_names ),"\n"
     invalid_directory_names_Stirng = "Invalid Directory Name : \n".join( invalid_directory_names )
     # invalid_file_names_Stirng = "\n  \t \t    ".join( invalid_file_names )
     # invalid_directory_names_Stirng = "\n \t \t \t ".join( invalid_directory_names )
